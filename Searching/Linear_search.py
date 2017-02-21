@@ -5,15 +5,19 @@
 #Sample output:(index of last occurance)
 5
 
-user_input = raw_input().split()
-N = int(user_input[0])
-M = int(user_input[1])
-indx_last = -1
-
-a_str = raw_input().split()
-a_int = map(int,a_str)
-
-for i in range(len(a_int)):
-	if a_int[i] == M:
-		indx_last = i
-print indx_last+1
+try:
+	def main():
+		user_input = raw_input().split() #Splitting 1st line
+		N = int(user_input[0])
+		M = int(user_input[1])
+		indx_last = -1                   #Initializing output variable to -1
+		a_str = raw_input().split()      #Splitting 2nd input line
+		a_int = map(int,a_str)           #Converting array of strings to array of ints
+		for i in range(len(a_int)):
+			if a_int[i] == M:
+				indx_last = i            #Will update the indx_last with index of last occurance
+		print indx_last+1                #Printing index+1 as index starts at 0
+	if __name__ == '__main__':
+		main()
+except Exception as e:
+	print e
