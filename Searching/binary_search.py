@@ -40,6 +40,7 @@ try:
 		a_str = raw_input().split()
 		if len(a_str) == N:
 			a_int = map(int,a_str)
+			a_int.sort()
 		else: 
 			print "Invalid input"
 			sys.exit()
